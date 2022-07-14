@@ -1,4 +1,4 @@
-# run-buddy
+# Run Buddy, Inc
 
 ## Purpose
 
@@ -16,3 +16,5 @@ https://danecronin.github.io/run-buddy/
 # Contribution
 
 Made by Dane Cronin
+
+### Copyright 2019 Run Buddy, Inc
