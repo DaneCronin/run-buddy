@@ -507,26 +507,29 @@ section {
     color: #fce138;
 }
 
-.contact-info iframe {
+.contact-info > * {
 
-    width: 400px;
+    flex: 1; 
+    margin: 15px;
+
+}
+
+
+.contact-info {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.contact-info iframe {
 
     height: 400px;
 
 }
 
 .contact-info div {
-
-    width: 410px;
-
-    display: inline-block;
-
-    vertical-align: top;
-
-    text-align: left;
-
-    margin: 30px 0 0 60px;
-
     color: white;
 }
 
@@ -545,7 +548,7 @@ section {
 
     line-height: 1.5;
 
-    font-size: 20px;
+    font-size: 16px;
     
     font-style: normal;
 
@@ -554,6 +557,19 @@ section {
 .contact-info a {
 
     color: #fce138;
+
+}
+
+.contact-form input, .contact-form textarea {
+
+    border: 1px solid #024e76;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: #024e76;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
 
 }
 
