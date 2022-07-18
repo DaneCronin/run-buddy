@@ -34,8 +34,15 @@ body {
 /* apply styles to <header> */
 header {
 
+    display: flex;
+
     padding: 20px 35px;
 
+    background-color: #39a6b2;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
 
 }
 
@@ -51,8 +58,6 @@ header h1 {
 
     margin: 0;
 
-    display: inline;
-
 
 }
 
@@ -67,8 +72,6 @@ header a {
 /* style for navigation bar */
 
 header nav {
-
-    float: right;
 
     margin: 7px 0;
 
@@ -460,8 +463,8 @@ section {
     margin: 30px 0 0 60px;
 
     color: white;
-
 }
+
 
 .contact-info h3 {
 
