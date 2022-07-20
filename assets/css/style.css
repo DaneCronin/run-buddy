@@ -8,6 +8,11 @@
 
 }
 
+:root{
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+}
 
 .text-left {
 
@@ -21,11 +26,16 @@
 
 }
 
+.flex-row {
+
+    display: flex;
+
+}
+
 body {
     
-    /* commenting out */
 
-    color: #39a6b2;
+    color: var(--tertiary-color);
 
     font-family: Helvetica, Arial, sans-serif;
 
@@ -34,9 +44,33 @@ body {
 /* apply styles to <header> */
 header {
 
+    display: flex;
+
     padding: 20px 35px;
 
-    background-color: #39a6b2;
+    background-image: url("../images/hero-bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    background-position: 80%;
+
+    background-color: var(--tertiary-color);
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    position: -webkit-sticky;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 9999;
 
 }
 
@@ -48,12 +82,11 @@ header h1 {
 
     font-size: 36px;
 
-    color: #fce138;
+    color: var(--primary-color);
 
     margin: 0;
 
-    display: inline;
-
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -61,7 +94,7 @@ header a {
 
     text-decoration: none;
 
-    color: #fce138;
+    color: var(--primary-color);
 
 }
 
@@ -69,33 +102,54 @@ header a {
 
 header nav {
 
-    float: right;
-
     margin: 7px 0;
 
 }
 
-header nav ul li {
+header nav ul {
 
-    display: inline;
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    list-style: none;
 
 }
 
 header nav ul li a {
 
-    margin: 0 30px;
+    padding: 10px 15px;
 
     font-weight: lighter;
 
-    font-size: 22px;
+    font-size: 1.5vw;
+
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
 }
+
+header nav ul li a:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 15px;
+    text-shadow: none;
+  }
 
 /* style for footer */
 
 footer {
 
-    background-color: #fce138;
+    display: flex;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    background-color: var(--primary-color);
 
     width: 100%;
 
@@ -105,9 +159,7 @@ footer {
 
 footer h2 {
 
-    display: inline;
-
-    color: #024e76;
+    color: var(--secondary-color);
 
     font-size: 30px;
 
@@ -117,8 +169,6 @@ footer h2 {
 
 footer div {
 
-    float: right;
-
     line-height: 1.5;
 
     text-align: right;
@@ -127,7 +177,7 @@ footer div {
 
 footer a {
 
-    color: #024e76;
+    color: var(--secondary-color);
 
 }
 
@@ -144,15 +194,24 @@ section {
 
     background-image: url("../images/hero-bg.jpg");
 
-    height: 600px;
-
     background-size: cover;
 
     background-position: center;
 
-    position: relative;
+    background-attachment: fixed;
+
+    background-position: 80%;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    align-items: flex-start;
 
 }
+
 
 .hero-form h3 {
 
@@ -176,15 +235,45 @@ section {
 
 .hero-form button {
 
-    background-color: #024e76;
+    background-color: var(--secondary-color);
 
-    color: #fce138;
+    color: var(--primary-color);
 
     border: none;
+
+    border-radius: 10px;
 
     font-size: 16px;
     
     padding: 10px 20px;
+
+}
+
+.hero-cta {
+
+    width: 35%;
+
+    text-align: right;
+
+    margin: 3.5%;
+
+    color: #fff;
+
+    font-size: 18px;
+    
+    line-height: 1.2;
+
+}
+
+.hero-cta h2 {
+
+    font-style: italic;
+
+    font-size: 55px;
+
+    color: var(--primary-color);
+
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -194,32 +283,37 @@ section {
 
 .hero-form {
 
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8);
 
     padding: 20px;
 
-    width: 500px;
-
-    color: #024e76;
+    color: var(--secondary-color);
 
     border-style: solid;
 
     border-width: 3px;
 
-    border-color: #024e76;
+    border-color: var(--secondary-color);
 
-    position: absolute;
+    border-radius: 15px;
 
-    bottom: 120px;
+    width: 40%;
 
-    right: 140px;
+    margin: 3.5%;
 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
 }
 
+.hero-form button:hover {
+    background-color: var(--tertiary-color);  
+  }
+
 .form-input {
 
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
+
+    border-radius: 10px;
 
     display: block;
 
@@ -227,14 +321,86 @@ section {
 
     font-size: 16px;
 
-    color: #024e76;
+    color: var(--secondary-color);
 
     width: 100%;
 
     margin-bottom: 15px;
 
+    background-color: rgba(255,255,255, 0.75);
+
 }
 
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
+  }
+
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+}
+
+.checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);  
+    border: 1px solid #024e76;  
+    position: absolute;
+    top: -4px;
+    left: -30px;
+}
+
+.radio-wrapper label::before {
+    border-radius: 50%;
+}
+
+.radio-wrapper label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    position: absolute;
+    left: -29px;
+    top: -3px;
+}
+
+.checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    position: absolute;
+    left: -26px;
+    top: 1px;   
+}
+
+.checkbox-wrapper label::after {
+    transform: rotate(-58deg);
+}
+
+.radio-wrapper label::after {
+   background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color));
+}
+
+.checkbox-wrapper input + label::after,
+.radio-wrapper input + label::after {
+  content: none;
+}
+
+.checkbox-wrapper input:checked + label::after,
+.radio-wrapper input:checked + label::after {
+    content: "";
+}
 
 /* Hero Form Style End */
 
@@ -242,29 +408,31 @@ section {
 
 .section-title {
 
-    font-size: 55px;
+    font-size: 48px;
 
-    color: #024e76;
-
-    margin-bottom: 35px;
-
-    padding: 0 100px 20px 100px;
-
-    display: inline-block;
+    color: var(--secondary-color);
 
     border-bottom: 3px solid;
+
+    padding-bottom: 20px;
+
+    text-align: center;
+
+    margin: 0 auto 35px auto;
+
+    width: 50%;
 
 }
 
 .primary-border {
 
-    border-color: #fce138;
+    border-color: var(--primary-color);
 
 }
 
 .secondary-border {
 
-    border-color: #39a6b2;
+    border-color: var(--tertiary-color);
 
 }
 
@@ -272,18 +440,12 @@ section {
 
 /* Style What We Do Section */
 
-.intro {
-
-    text-align: center;
-
-}
-
 
 .intro p {
 
     line-height: 1.7;
 
-    color: #39a6b2;
+    color: var(--tertiary-color);
 
     width: 80%;
 
@@ -291,106 +453,145 @@ section {
 
     margin: 0 auto;
 
+    text-align: center;
+
 }
 
 /* End Style What We Do */
 
 /* Style What You Do */
 
+.step {
+
+    margin: 50px, auto;
+    padding-bottom: 50px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.step:not(:last-child) {
+    border-bottom: 1px solid var(--tertiary-color);
+}
+
+
 .steps {
 
-    text-align: center;
-
-    background: #fce138;
+    background: var(--primary-color);
 
 }
 
-.steps div {
 
-    margin-bottom: 80px;
+.step h3 {
 
-}
-
-.steps img {
-
-    width: 15%;
-
-    margin: 10px 0;
-
-}
-
-.steps h3 {
-
-    color: #024e76;
+    color: var(--secondary-color);
 
     font-size: 46px;
 
-    margin-top: 10px;
+    flex: 1 30%;
 
 }
 
-.steps span {
+.step-text h4 {
 
-    font-size: 36px;
+    font-size: 26px;
+
+    line-height: 1.5;
+
+    color: var(--secondary-color);
 
 }
 
-.steps p {
+.step-info {
 
-    color: #39a6b2;
+    flex: 2 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
-    font-size: 23px;
+}
+
+.step-text p {
+
+    color: var(--tertiary-color);
+
+    font-size: 18px;
+
+}
+
+.step-img {
+
+    flex: 1 12%;
+    margin-right: 20px;
+
+}
+
+.step-img img{
+
+    width: 100%;
+
+}
+
+
+.step-text {
+
+    flex: 12;
 
 }
 
 /* End Style What You Do */
 
+
 /* Style Trainers Section */
 
 .trainers {
 
-    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
 }
 
+
+
 .trainer {
 
-    width: 900px;
+    flex: 1;
 
-    margin: 0 auto 30px auto;
+    margin: 20px;
 
-    background: #024e76;
+    background: var(--secondary-color);
 
-    color: #fce138;
+    color: var(--primary-color);
 
-    overflow: auto;
 
 }
 
 .trainer img {
 
-    width: 35%;
+    width: 100%;
 
-    float: left;
 
 }
 
 
 .trainer-bio {
 
-    padding: 35px;
+    padding: 25px;
 
-    float: left;
-
-    width: 65%;
+    line-height: 1.3;
 
 }
 
 .trainer-bio h3 {
 
-    font-size: 32px;
+    font-size: 28px;
 
-    margin-bottom: 8px;
 
 }
 
@@ -398,17 +599,15 @@ section {
 
     font-weight: lighter;
 
-    font-size: 26px;
+    font-size: 22px;
 
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 
 }
 
 .trainer-bio p {
 
     font-size: 17px;
-
-    line-height: 1.3;
 
 }
 
@@ -428,44 +627,45 @@ section {
 
 .contact {
 
-    text-align: center;
-
-    background: #024e76;
+    background: var(--secondary-color);
 
 }
 
 .contact h2 {
 
-    color: #fce138;
+    color: var(--primary-color);
+}
+
+.contact-info > * {
+
+    flex: 1; 
+    margin: 15px;
+
+}
+
+
+.contact-info {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 
 .contact-info iframe {
-
-    width: 400px;
 
     height: 400px;
 
 }
 
 .contact-info div {
-
-    width: 410px;
-
-    display: inline-block;
-
-    vertical-align: top;
-
-    text-align: left;
-
-    margin: 30px 0 0 60px;
-
     color: white;
-
 }
+
 
 .contact-info h3 {
 
-    color: #fce138;
+    color: var(--primary-color);
 
     font-size: 32px;
 
@@ -477,7 +677,7 @@ section {
 
     line-height: 1.5;
 
-    font-size: 20px;
+    font-size: 16px;
     
     font-style: normal;
 
@@ -485,9 +685,176 @@ section {
 
 .contact-info a {
 
-    color: #fce138;
+    color: var(--primary-color);
+
+}
+
+.contact-form button {
+
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+
+}
+
+.contact-form button:hover {
+    color: var(--primary-color);
+    background: var(--tertiary-color);
+  }
+
+
+.contact-form input, .contact-form textarea {
+
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
 
 }
 
 /* Reach Out Styles End */
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+
+@media screen and (max-width: 980px) {
+ /* this will be applied on any screen smaller than 980px */
+
+    header {
+        padding-bottom: 0;
+        position: relative;
+        justify-content: center;
+    }
+
+    header h1 {
+        width: 100%;
+        text-align: center;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    }
+
+    header nav ul {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+        font-size: 20px;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    footer h2, footer div {
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-cta, .hero-form {
+        width: 100%;
+    }
+  
+    .hero-cta {
+        text-align: center;
+    }
+
+    .section-title {
+        width: 80%;
+    }
+
+    .trainer {
+        flex: 0 70%;
+    }
+
+    .contact-info iframe {
+        flex: 1 100%;
+    }
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+
+@media screen and (max-width: 768px) {
+  /* this will be applied on any screen between 768px and 575px */
+    
+  section {
+    padding: 30px 15px;
+  }
+
+  .step h3 {
+    flex: 1 100%;
+    text-align: center;
+  }
+
+  .step-info {
+    flex: 2 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .step-img {
+    flex: 0 32%;
+    margin-right: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .step-text {
+    flex: 100%;
+  }
+
+
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+
+@media screen and (max-width: 575px) {
+     /* this will be applied on any screen smaller than 575px */
+     
+     .hero-form button {
+        width: 100%;
+     }
+
+     .section-title {
+        width: 95%;
+     }
+
+     .intro p {
+        width: 100%;
+     }
+
+     .trainer {
+        flex: 0 100%;
+     }
+
+     .contact-info {
+        text-align: center;
+     }
+     
+     .contact-info > * {
+        flex: 0 100%
+     }
+
+     .contact-form {
+        order: 3;
+     }
+
+}
+
+/* END MEDIA QUERY SIZES STYLE */
+
 
